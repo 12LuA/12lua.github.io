@@ -6,18 +6,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card"
-import { useGithubStats, type GithubStats } from "@/hooks/use-github-stats"
+import { useGithubStats } from "@/hooks/use-github-stats"
 import { ChartLine, Folder, GitPullRequest, Star } from "lucide-react"
-
-type GithubStatsCardProps = {
-  username: string
-}
 
 const formatNumber = (value: number): string => {
   return new Intl.NumberFormat("de-DE").format(value)
 }
 
-export function GithubStatsCard({ username }: GithubStatsCardProps) {
+export function GithubStatsCard() {
   const { stats } = useGithubStats()
 
   return (

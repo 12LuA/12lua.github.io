@@ -19,7 +19,7 @@ export default function Page() {
 
         <div className="w-full max-w-md">
           <h2 className="mb-3 text-lg font-semibold">GitHub Stats</h2>
-          <GithubStatsCard username="12LuA" />
+          <GithubStatsCard />
         </div>
       </div>
     </div>
