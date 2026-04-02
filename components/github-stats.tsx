@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { useGithubStats } from "@/hooks/use-github-stats"
-import { ChartLine, Folder, GitPullRequest, Star } from "lucide-react"
+import { ChartLine, Folder, GitPullRequest, Star, CircleDot } from "lucide-react"
 
 const formatNumber = (value: number): string => {
   return new Intl.NumberFormat("de-DE").format(value)
@@ -62,6 +62,18 @@ export function GithubStatsCard() {
           </CardTitle>
           <CardDescription className="text-3xl font-semibold text-primary">
             {formatNumber(stats.pullRequests)}
+          </CardDescription>
+        </CardHeader>
+      </Card>
+
+      <Card className="bg-white/2 hover:bg-white/10">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-sm text-muted-foreground">
+            <CircleDot className="h-4 w-4" />
+            Issues
+          </CardTitle>
+          <CardDescription className="text-3xl font-semibold text-primary">
+            {formatNumber(stats.issues)}
           </CardDescription>
         </CardHeader>
       </Card>
