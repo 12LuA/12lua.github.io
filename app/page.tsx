@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button"
 import { GithubStatsCard } from "@/components/github-stats"
 import { ModeToggle } from "@/components/theme-button"
+import { Separator } from "@/components/ui/separator"
 
 export default function Page() {
   return (
     <div className="min-h-svh p-15">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 md:flex-row md:items-start md:justify-between">
-        <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-15 md:flex-row md:items-start md:justify-between">
+        <div className="flex w-full min-w-0 flex-1 flex-col gap-4 text-sm leading-loose">
+          <div className="font-bold text-2xl md:text-4xl">
+            12LuA
+          </div>
+          <Separator />
           <div>
             <h1 className="font-medium">Project ready!</h1>
             <p>You may now add components and start building.</p>
