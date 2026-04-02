@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { GithubStatsCard } from "@/components/github-stats"
+import { Projects } from "@/components/projects"
 import { ModeToggle } from "@/components/theme-button"
 import { Separator } from "@/components/ui/separator"
 import { siGithub } from "simple-icons"
@@ -35,6 +36,7 @@ export default function Page() {
             <p>We&apos;ve already added the button component for you.</p>
             <Button className="mt-2">Button</Button>
           </div>
+          <Projects />
           <div className="font-mono text-xs text-muted-foreground">
             (Press <kbd>d</kbd> to toggle dark mode)
           </div>
