@@ -117,11 +117,11 @@ async function fetchRepoStats() {
   };
 }
 
-async function fetchAllTimeContributions(createdAtIso) {
+async function fetchContributions() {
   const query = `
-    query Contributions($username: String!, $from: DateTime!, $to: DateTime!) {
+    query Contributions($username: String!) {
       user(login: $username) {
-        contributionsCollection(from: $from, to: $to) {
+        contributionsCollection {
           contributionCalendar {
             totalContributions
           }
@@ -130,32 +130,17 @@ async function fetchAllTimeContributions(createdAtIso) {
     }
   `;
 
-  const startYear = new Date(createdAtIso).getUTCFullYear();
-  const endYear = new Date().getUTCFullYear();
+  const data = await graphqlRequest(query, {
+    username: USERNAME,
+  });
 
-  let totalContributions = 0;
-
-  for (let year = startYear; year <= endYear; year += 1) {
-    const from = `${year}-01-01T00:00:00Z`;
-    const to = `${year}-12-31T23:59:59Z`;
-
-    const data = await graphqlRequest(query, {
-      username: USERNAME,
-      from,
-      to,
-    });
-
-    totalContributions +=
-      data.user.contributionsCollection.contributionCalendar.totalContributions;
-  }
-
-  return totalContributions;
+  return data.user.contributionsCollection.contributionCalendar.totalContributions;
 }
 
 async function fetchStats() {
   const baseData = await fetchUserBaseData();
   const repoData = await fetchRepoStats();
-  const contributions = await fetchAllTimeContributions(baseData.createdAt);
+  const contributions = await fetchContributions();
 
   return {
     followers: baseData.followers,
