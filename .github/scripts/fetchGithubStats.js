@@ -74,7 +74,6 @@ async function fetchRepoStats() {
           first: 100
           after: $cursor
           ownerAffiliations: OWNER
-          privacy: PUBLIC
         ) {
           totalCount
           pageInfo {
