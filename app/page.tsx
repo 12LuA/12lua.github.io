@@ -2,14 +2,31 @@ import { Button } from "@/components/ui/button"
 import { GithubStatsCard } from "@/components/github-stats"
 import { ModeToggle } from "@/components/theme-button"
 import { Separator } from "@/components/ui/separator"
+import { siGithub } from "simple-icons"
 
 export default function Page() {
   return (
     <div className="min-h-svh p-15">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-15 md:flex-row md:items-start md:justify-between">
         <div className="flex w-full min-w-0 flex-1 flex-col gap-4 text-sm leading-loose">
-          <div className="font-bold text-2xl md:text-4xl">
+          <div className="flex items-center justify-between text-2xl font-bold md:text-4xl">
             12LuA
+            <Button asChild variant="outline" size="icon">
+              <a
+                href="https://github.com/12LuA"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open GitHub profile"
+              >
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="size-4 fill-current"
+                >
+                  <path d={siGithub.path} />
+                </svg>
+              </a>
+            </Button>
           </div>
           <Separator />
           <div>
@@ -28,8 +45,8 @@ export default function Page() {
           <GithubStatsCard />
         </div>
       </div>
-      
-      <div className="fixed bottom-6 right-6">
+
+      <div className="fixed right-6 bottom-6">
         <ModeToggle />
       </div>
     </div>
