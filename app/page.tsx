@@ -4,8 +4,18 @@ import { Projects } from "@/components/projects"
 import { ModeToggle } from "@/components/theme-button"
 import { Separator } from "@/components/ui/separator"
 import { FaGithub } from "react-icons/fa6"
+import { usePlausible } from "next-plausible"
 
 export default function Page() {
+  const plausible = usePlausible()
+  const handleClick = () => {
+    plausible("Button clicked", {
+      props: {
+        btnText: "GitHub",
+        btnLocation: "Homepage",
+      },
+    })
+  }
   return (
     <div className="min-h-svh p-15">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-15 md:flex-row md:items-start md:justify-between">
@@ -22,7 +32,7 @@ export default function Page() {
                   Contact Me
                 </a>
               </Button>
-              <Button asChild variant="outline" size="icon">
+              <Button asChild variant="outline" size="icon" onClick={handleClick}>
                 <a
                   href="https://github.com/12LuA"
                   target="_blank"
