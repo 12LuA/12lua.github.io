@@ -3,12 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import { init } from '@plausible-analytics/tracker'
-
-init({
-  domain: '12lua.github.io',
-  endpoint: 'https://analytics.12lua.de/api/event'
-})
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
