@@ -29,7 +29,11 @@ export default function RootLayout({
       )}
     >
       <body>
-        <PlausibleProvider domain="analytics.12lua.de" selfHosted={true} customDomain="https://analytics.12lua.de">
+        <PlausibleProvider
+          domain="12lua.github.io"
+          selfHosted={true}
+          customDomain="https://analytics.12lua.de"
+        >
           <ThemeProvider>
             {children}
             <div className="background-gradient" />
