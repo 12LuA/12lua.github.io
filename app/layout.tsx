@@ -1,5 +1,4 @@
 import { Geist, Geist_Mono } from "next/font/google"
-import Script from "next/script"
 
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -34,7 +33,7 @@ export default function RootLayout({
           trackLocalhost
           enabled
           domain="12lua.github.io"
-          customDomain="analytics.12lua.de"
+          customDomain="https://analytics.12lua.de"
         />
       </head>
       <body>
