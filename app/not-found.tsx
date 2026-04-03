@@ -1,7 +1,9 @@
-import Link from "next/link"
-import Script from "next/script"
-import { Info } from "lucide-react"
-import { Button } from "@/components/ui/button"
+"use client";
+
+import { useEffect } from "react";
+import Link from "next/link";
+import { Info } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   Empty,
   EmptyContent,
@@ -9,14 +11,21 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/components/ui/empty"
+} from "@/components/ui/empty";
 
 export default function NotFound() {
+  useEffect(() => {
+    if (window.plausible) {
+      window.plausible("404", {
+        props: {
+          path: window.location.pathname,
+        },
+      });
+    }
+  }, []);
+
   return (
     <Empty className="min-h-[80vh]">
-      <Script id="plausible-404" strategy="beforeInteractive">
-        {`document.addEventListener('DOMContentLoaded', function () { plausible('404'); });`}
-      </Script>
       <EmptyHeader>
         <EmptyMedia variant="icon">
           <Info />
@@ -33,5 +42,5 @@ export default function NotFound() {
         </Button>
       </EmptyContent>
     </Empty>
-  )
+  );
 }
