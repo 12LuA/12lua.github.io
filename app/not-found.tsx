@@ -14,7 +14,7 @@ import {
 export default function NotFound() {
   return (
     <Empty className="min-h-[80vh]">
-      <Script id="plausible-404" strategy="afterInteractive">
+      <Script id="plausible-404" strategy="beforeInteractive">
         {`document.addEventListener('DOMContentLoaded', function () { plausible('404'); });`}
       </Script>
       <EmptyHeader>
