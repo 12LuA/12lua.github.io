@@ -12,23 +12,34 @@ export default function Page() {
         <div className="flex w-full min-w-0 flex-1 flex-col gap-4 text-sm leading-loose">
           <div className="flex items-center justify-between text-2xl font-bold md:text-4xl">
             12LuA
-            <Button asChild variant="outline" size="icon">
-              <a
-                href="https://github.com/12LuA"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Open GitHub profile"
-              >
-                <FaGithub aria-hidden="true" className="size-4" />
-              </a>
-            </Button>
+            <div className="flex items-center gap-2">
+              <Button asChild>
+                <a
+                  href="https://discord.com/users/602846728147959808"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Contact Me
+                </a>
+              </Button>
+              <Button asChild variant="outline" size="icon">
+                <a
+                  href="https://github.com/12LuA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open GitHub profile"
+                >
+                  <FaGithub aria-hidden="true" className="size-4" />
+                </a>
+              </Button>
+            </div>
           </div>
           <Separator />
           <div>
             <h1 className="font-medium">Project ready!</h1>
             <p>You may now add components and start building.</p>
             <p>We&apos;ve already added the button component for you.</p>
-            <Button className="mt-2">Button</Button>
+            
           </div>
           <Projects />
           <div className="font-mono text-xs text-muted-foreground">
