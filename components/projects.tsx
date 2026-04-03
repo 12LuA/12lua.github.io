@@ -49,9 +49,9 @@ export function Projects() {
 
       <Card className="mx-auto w-full max-w-sm bg-white/4 transition-colors hover:bg-white/5">
         <CardHeader>
-          <CardTitle>12lua.github.io</CardTitle>
+          <CardTitle>GTA Tools</CardTitle>
           <CardDescription>
-            My personal website showcasing projects and portfolio
+            Tools for GTA Online, such as the Cayo Perico Loot Calculator
           </CardDescription>
           <CardAction className="flex items-center gap-1 text-muted-foreground/80">
             <Star className="size-3.5 text-muted-foreground/60" />
@@ -61,7 +61,7 @@ export function Projects() {
         <CardFooter className="p-0">
           <Button asChild variant="ghost" className={statButtonClass}>
             <a
-              href="https://github.com/12LuA/12lua.github.io"
+              href="https://github.com/12LuA/Cayo-Calculator"
               target="_blank"
               rel="noopener"
             >
@@ -70,7 +70,7 @@ export function Projects() {
             </a>
           </Button>
           <Button asChild variant="ghost" className={statButtonClass}>
-            <a href="https://12lua.github.io" target="_blank" rel="noopener">
+            <a href="https://gta-tools.vercel.app/" target="_blank" rel="noopener">
               <Eye className="size-4" />
               <span>View</span>
             </a>
