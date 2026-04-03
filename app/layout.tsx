@@ -3,7 +3,6 @@ import { Geist, Geist_Mono } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
-import PlausibleProvider from "next-plausible"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -29,21 +28,10 @@ export default function RootLayout({
       )}
     >
       <body>
-        <PlausibleProvider
-          domain="12lua.github.io"
-          selfHosted={true}
-          customDomain="https://analytics.12lua.de"
-          trackOutboundLinks={true}
-          trackFileDownloads={true}
-          taggedEvents={true}
-          revenue={true}
-          enabled={true}
-        >
-          <ThemeProvider>
-            {children}
-            <div className="background-gradient" />
-          </ThemeProvider>
-        </PlausibleProvider>
+        <ThemeProvider>
+          {children}
+          <div className="background-gradient" />
+        </ThemeProvider>
       </body>
     </html>
   )
