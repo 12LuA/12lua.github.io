@@ -30,15 +30,11 @@ export default function RootLayout({
     >
       <body>
         <ThemeProvider>
-          <Script
-            async
-            src="https://analytics.12lua.de/js/pa-PWfVZ8BjGC_sHddN5DjkY.js"
-            strategy="afterInteractive"
-          />
-          <Script id="plausible-init" strategy="afterInteractive">
-            {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-plausible.init()`}
-          </Script>
+          <script
+          defer
+          data-domain="12lua.github.io"
+          src="https://analytics.12lua.de/js/script.js"
+        ></script>
           {children}
           <div className="background-gradient" />
         </ThemeProvider>
