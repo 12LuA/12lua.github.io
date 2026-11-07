@@ -11,20 +11,8 @@ import {
   EmptyMedia,
   EmptyTitle,
 } from "@/components/ui/empty";
-import { usePlausible } from "next-plausible";
-
 
 export default function NotFound() {
-    const plausible = usePlausible()
-    const handleClick = () => {
-    plausible("Button clicked", {
-      props: {
-        btnText: "back",
-        btnLocation: "404-Page",
-      },
-    })
-  }
-
   return (
     <Empty className="min-h-[80vh]">
       <EmptyHeader>
@@ -38,8 +26,15 @@ export default function NotFound() {
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="flex-row justify-center gap-2">
-        <Button asChild variant="outline" onClick={handleClick}>
-          <Link href="/">Return Home</Link>
+        <Button asChild variant="outline">
+          <Link
+            href="/"
+            data-umami-event="Button clicked"
+            data-umami-event-text="back"
+            data-umami-event-location="404-Page"
+          >
+            Return Home
+          </Link>
         </Button>
       </EmptyContent>
     </Empty>
